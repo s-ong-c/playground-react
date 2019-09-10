@@ -31,12 +31,23 @@ components
   .addDecorator(withKnobs)
   .addDecorator(withInfo({ inline: true }))
   .add('LoginButton', () => (
-    <RoundButton
-      onClick={action('clicked')}
-      size={object(size, size_defaultValue, size_groupId)}
-    >
-      로그인
-    </RoundButton>
+    <>
+      <RoundButton
+        onClick={action('clicked')}
+        size={object(size, size_defaultValue, size_groupId)}
+      >
+        로그인
+      </RoundButton>
+      <RoundButton
+        border={boolean('border', true)}
+        color={object('color', 'darkGray', 'color')}
+        size={object(size, size_defaultValue, size_groupId)}
+        style={object(label, defaultValue, groupId) as React.CSSProperties}
+        //   style={{ marginRight: '1.25rem' }}
+      >
+        새 글 작성
+      </RoundButton>
+    </>
   ))
   .add('Button', () => (
     <RoundButton
