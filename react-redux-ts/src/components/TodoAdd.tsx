@@ -47,15 +47,13 @@ const TodoAdd: React.SFC<TodoAddProps> = ({ onInsert }) => {
     setValue("");
   };
   return (
-    <TodoAddBlock>
-      <form onSubmit={onSubmit}>
-        <input
-          placeholder="할 일을 입력하세요."
-          value={value}
-          onChange={onChange}
-        />
-        <button type="submit">등록</button>
-      </form>
+    <TodoAddBlock onSubmit={onSubmit}>
+      <input
+        placeholder="할 일을 입력하세요."
+        value={value}
+        onChange={onChange}
+      />
+      <button type="submit">등록</button>
     </TodoAddBlock>
   );
 };
