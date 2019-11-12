@@ -1,9 +1,7 @@
 import React from "react";
-import logo from "./logo.svg";
-import "./App.css";
-
+import SuperMarket from "./components/SuperMarket";
 const App: React.FC = () => {
-  return <div />;
+  return <SuperMarket />;
 };
 
 export default App;
