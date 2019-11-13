@@ -24,15 +24,20 @@ const ShopItemBlock = styled.div`
     }
   }
 `;
+
 export interface ShopItemProps {
   name: string;
   price: number;
+  onPut: (name: string, price: number) => void;
 }
 
-const ShopItem: React.SFC<ShopItemProps> = ({ name, price }) => {
+const ShopItem: React.SFC<ShopItemProps> = ({ name, price, onPut }) => {
+  const onPutClick = () => {
+    onPut(name, price);
+  };
   return (
     <ShopItemBlock>
-      <div className="ShopItem">
+      <div className="ShopItem" onClick={onPutClick}>
         <h4>{name}</h4>
         <div>{price}원</div>
       </div>

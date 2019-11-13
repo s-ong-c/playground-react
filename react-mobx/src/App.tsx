@@ -1,7 +1,11 @@
 import React from "react";
 import SuperMarket from "./components/SuperMarket";
 const App: React.FC = () => {
-  return <SuperMarket />;
+  return (
+    <div>
+      <SuperMarket />
+    </div>
+  );
 };
 
 export default App;

@@ -29,6 +29,7 @@ const BasketItemBlock = styled.div`
     margin-top: 1rem;
   }
 `;
+
 export interface BasketItemProps {
   name: string;
   price: number;
