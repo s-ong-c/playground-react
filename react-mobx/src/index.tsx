@@ -5,7 +5,6 @@ import App from "./App";
 import { Provider } from "mobx-react";
 import MarketStore from "./stores/market";
 import * as serviceWorker from "./serviceWorker";
-import DevTools from "mobx-react-devtools";
 // const store = createStore(rootReducer, composeWithDevTools());
 
 const market = new MarketStore();
