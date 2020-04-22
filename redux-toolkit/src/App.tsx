@@ -1,7 +1,12 @@
-import React from "react";
+import React from 'react';
+import TodoContainer from './containers/TodoContainers';
 
 function App() {
-  return <div>Hello </div>;
+  return (
+    <div>
+      <TodoContainer />
+    </div>
+  );
 }
 
 export default App;

@@ -7,6 +7,8 @@ const FormBlock = styled.form`
   height: 2rem;
   justify-content: space-between;
   input {
+    outline: none;
+    border: none;
     flex: 1;
     border-top-left-radius: 4px;
     border-bottom-left-radius: 4px;

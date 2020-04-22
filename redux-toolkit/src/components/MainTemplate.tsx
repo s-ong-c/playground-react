@@ -46,7 +46,7 @@ interface MainTemplateProps {
   addTodoList: (todo: string) => void;
 }
 const { useState } = React;
-const MainTemplate: React.SFC<MainTemplateProps> = ({
+const MainTemplate: React.FC<MainTemplateProps> = ({
   addTodoList,
   children,
 }) => {

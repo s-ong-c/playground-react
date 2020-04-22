@@ -1,11 +1,6 @@
 import * as React from 'react';
 import styled, { css } from 'styled-components';
 import { MdDone, MdDelete } from 'react-icons/md';
-interface TodoItemProps {
-  title: string;
-  status: boolean;
-  visible: boolean;
-}
 const TodoItemBlock = styled.div<{ visible: boolean }>`
   display: flex;
   align-items: center;
@@ -60,13 +55,30 @@ const Remove = styled.div`
     color: #ff6b6b;
   }
 `;
-const TodoItem: React.FC<TodoItemProps> = ({ status, title, visible }) => {
+
+interface TodoItemProps {
+  title: string;
+  status: boolean;
+  visible: boolean;
+  onDelete: () => void;
+  onToggle: () => void;
+}
+
+const TodoItem: React.FC<TodoItemProps> = ({
+  status,
+  title,
+  visible,
+  onDelete,
+  onToggle,
+}) => {
   return (
     <TodoItemBlock visible={visible}>
-      <CheckCircle status={status}>{status ? <MdDone /> : ''}</CheckCircle>
+      <CheckCircle onClick={onToggle} status={status}>
+        {status ? <MdDone /> : ''}
+      </CheckCircle>
       <Text status={status}>{title}</Text>
       <Remove>
-        <MdDelete />
+        <MdDelete onClick={onDelete} />
       </Remove>
     </TodoItemBlock>
   );
