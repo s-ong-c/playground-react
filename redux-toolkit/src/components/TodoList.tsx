@@ -64,20 +64,21 @@ interface TodoListProps {
   onToggle: (id: string) => void;
   onDelete: (id: string) => void;
 }
-const TodoList: React.SFC<TodoListProps> = ({
+
+function TodoList({
   todoItems,
   visible,
   onVisible,
   onDelete,
   onToggle,
-}) => {
+}: TodoListProps) {
   return (
     <TodoListBlock>
       <header>
         <h3>Todo App</h3>
         <button onClick={onVisible}>{!visible ? '숨기기' : '보여줘'}</button>
       </header>
-      {todoItems.map(todo => (
+      {todoItems.map((todo) => (
         <TodoItem
           visible={visible}
           key={todo.id}
@@ -89,6 +90,6 @@ const TodoList: React.SFC<TodoListProps> = ({
       ))}
     </TodoListBlock>
   );
-};
+}
 
 export default TodoList;

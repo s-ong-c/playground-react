@@ -6,7 +6,7 @@ const TodoItemBlock = styled.div<{ visible: boolean }>`
   align-items: center;
   padding-top: 12px;
   padding-bottom: 12px;
-  ${props =>
+  ${(props) =>
     props.visible &&
     css`
       display: none;
@@ -18,7 +18,7 @@ const Text = styled.div<{ status: boolean }>`
   font-size: 21px;
   color: #495057;
   cursor: pointer;
-  ${props =>
+  ${(props) =>
     props.status &&
     css`
       color: #ced4da;
@@ -37,7 +37,7 @@ const CheckCircle = styled.div<{ status: boolean }>`
   justify-content: center;
   margin-right: 20px;
   cursor: pointer;
-  ${props =>
+  ${(props) =>
     props.status &&
     css`
       border: 1px solid #38d9a9;
@@ -64,13 +64,13 @@ interface TodoItemProps {
   onToggle: () => void;
 }
 
-const TodoItem: React.FC<TodoItemProps> = ({
+function TodoItem({
   status,
   title,
   visible,
   onDelete,
   onToggle,
-}) => {
+}: TodoItemProps) {
   return (
     <TodoItemBlock visible={visible}>
       <CheckCircle onClick={onToggle} status={status}>
@@ -82,6 +82,6 @@ const TodoItem: React.FC<TodoItemProps> = ({
       </Remove>
     </TodoItemBlock>
   );
-};
+}
 
 export default TodoItem;

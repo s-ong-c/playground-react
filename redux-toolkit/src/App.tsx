@@ -1,9 +1,9 @@
 import React from 'react';
-import MainTemplate from './components/TodoApp';
+import TodoApp from './components/TodoApp';
 
 function App() {
   return (
-      <MainTemplate />
+      <TodoApp />
   );
 }
 
