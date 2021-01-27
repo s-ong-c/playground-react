@@ -39,10 +39,10 @@ interface FormProps {
   value: string;
 }
 
-const Form: React.SFC<FormProps> = ({ onChange, onSubmit, value }) => {
+function Form({ onChange, onSubmit, value }: FormProps) {
   return (
     <FormBlock
-      onSubmit={e => {
+      onSubmit={(e) => {
         e.preventDefault();
         onSubmit(value);
       }}
@@ -55,6 +55,6 @@ const Form: React.SFC<FormProps> = ({ onChange, onSubmit, value }) => {
       <button>Submit</button>
     </FormBlock>
   );
-};
+}
 
 export default Form;

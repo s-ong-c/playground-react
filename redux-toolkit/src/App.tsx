@@ -1,11 +1,9 @@
 import React from 'react';
-import TodoContainer from './containers/TodoContainers';
+import MainTemplate from './components/TodoApp';
 
 function App() {
   return (
-    <div>
-      <TodoContainer />
-    </div>
+      <MainTemplate />
   );
 }
 

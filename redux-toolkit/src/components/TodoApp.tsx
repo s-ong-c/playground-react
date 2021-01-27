@@ -1,6 +1,9 @@
 import * as React from 'react';
 import styled from 'styled-components';
+import useToggle from '../lib/hooks/useToggle';
 import Form from './Form';
+import useTodos from './hooks/useTodos';
+import TodoList from './TodoList';
 
 const MainTemplateBlock = styled.div`
   width: 512px;
@@ -42,30 +45,34 @@ const MainTemplateBlock = styled.div`
     flex-direction: column;
   }
 `;
-interface MainTemplateProps {
-  addTodoList: (todo: string) => void;
-}
 const { useState } = React;
-const MainTemplate: React.FC<MainTemplateProps> = ({
-  addTodoList,
-  children,
-}) => {
+
+function TodoApp(){
   const [todo, setTodo] = useState('');
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setTodo(e.target.value);
   };
-  const onSubmit = (todo: string) => {
-    addTodoList(todo);
-    setTodo('');
-  };
+
+  const {onClickSubmit, onToggle, onDelete, items} = useTodos();
+  const [closed, setClosed] = useToggle(false);
   return (
     <MainTemplateBlock>
       <div className="wrapper">
-        <Form value={todo} onChange={onChange} onSubmit={onSubmit} />
+        <Form value={todo} onChange={onChange} onSubmit={onClickSubmit} />
       </div>
-      <div className="contents">{children}</div>
+      <div className="contents">
+        {items && (
+          <TodoList
+            todoItems={items}
+            onDelete={onDelete}
+            onToggle={onToggle}
+            onVisible={setClosed}
+            visible={closed}
+          />
+        )}
+      </div>
     </MainTemplateBlock>
   );
-};
+}
 
-export default MainTemplate;
+export default TodoApp;
