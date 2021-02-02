@@ -326,6 +326,7 @@ export const lightIcons = {
 };
 export const brandColor = "#3572AD";
 
+// eslint-disable-next-line
 export default {
   red: red,
   pink: pink,
@@ -344,11 +345,11 @@ export default {
   orange: orange,
   deepOrange: deepOrange,
   brown: brown,
-  blueGrey:blueGrey,
+  blueGrey: blueGrey,
   black: black,
   white: white,
   darkText: darkText,
-  lightText:lightText,
+  lightText: lightText,
   darkIcons: darkIcons,
   lightIcons: lightIcons,
   brandColor: brandColor,

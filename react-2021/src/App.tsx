@@ -1,8 +1,8 @@
-import React from "react";
-import "./App.css";
-import { Global, css } from "@emotion/react";
-import Layout from "./components/Layout";
-import Sidebar from "./components/Sidebar";
+import React from 'react'
+import './App.css'
+import { Global, css } from '@emotion/react'
+import Layout from './components/Layout'
+import Sidebar from './components/Sidebar'
 
 function App() {
   return (
@@ -15,7 +15,7 @@ function App() {
       </Layout>
       <Global styles={globalStyle} />
     </>
-  );
+  )
 }
 
 const globalStyle = css`
@@ -25,6 +25,6 @@ const globalStyle = css`
   * {
     box-sizing: inherit;
   }
-`;
+`
 
-export default App;
+export default App
