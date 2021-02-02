@@ -1,6 +1,6 @@
 import { css } from '@emotion/react'
-import palette from '../../lib/palette'
-import Icon from '../Icons/Icon'
+import palette from '../lib/palette'
+import SidebarItem from './SidebarItem'
 
 export type SidebarProps = {}
 
@@ -9,9 +9,7 @@ function Sidebar(props: SidebarProps) {
     <div css={sidebarStyle}>
       <div className="logo">SONGC</div>
       <ul css={menuStyle}>
-        <li>
-          <Icon name={'flask'} />
-        </li>
+        <SidebarItem icon="flask" text="LAB" />
       </ul>
     </div>
   )
