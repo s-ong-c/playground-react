@@ -1,6 +1,6 @@
 import { css } from '@emotion/react'
 
-export type LayoutProps = {
+export type AppLayoutProps = {
   children: React.ReactNode
 }
 
@@ -12,7 +12,7 @@ export type MainProps = {
   children: React.ReactNode
 }
 
-function Layout({ children }: LayoutProps) {
+function AppLayout({ children }: AppLayoutProps) {
   return <div>{children}</div>
 }
 
@@ -24,8 +24,8 @@ function Main({ children }: MainProps) {
   return <main css={mainStyle}>{children}</main>
 }
 
-Layout.Side = Side
-Layout.Main = Main
+AppLayout.Side = Side
+AppLayout.Main = Main
 
 const sidebarStyle = css`
   width: 16rem;
@@ -44,4 +44,4 @@ const mainStyle = css`
   padding-bottom: 3rem;
 `
 
-export default Layout
+export default AppLayout
